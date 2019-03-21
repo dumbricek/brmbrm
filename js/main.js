@@ -1,6 +1,4 @@
 $(function(){
-    //document.getElementsByTagName('h1')[0].style.display = 'none';
-    /* Změny zobrazení v sekci ustava */
     $('#ustava h4').click(function(){
         if ($(this).nextUntil('h4').is(':hidden')) {
             $(this).css({'background-color':'#048'});
@@ -9,28 +7,34 @@ $(function(){
         }
         $(this).nextUntil('h4').toggle(1000);
     });
-
-    /* Vykreslení prezidentů */
     var kviz = $('#kviz div.row');
     var odkazy = $('#odkazy ul');
-    prezidenti.forEach(function(obj,idx){
-        /*kviz.append('<div class="col-sm-4"><figure><img src="img/'
-        +obj.photo+'" alt="'+obj.name+'"><figcaption>'
-        +obj.name+'</figcaption></figure></div>');*/
-        kviz.append('<div class="col-sm-4"><figure><img src="img/prezident0.jpg" alt="prezident"><figcaption>'
+    auta.forEach(function(obj,idx){
+        kviz.append('<div class="col-sm-3"><figure><img src="img/nic0.jpg" class="img-fluid" alt="zahada"><figcaption>'
         +obj.name+'</figcaption></figure></div>');
         odkazy.append('<li><a href="'+ obj.link +'">'+ obj.name +'</a></li>');
     });
-
-    /* Po kliknutí na obrázek se náhodně mění fotky prezidentů */
-    var foto = $('#kviz img');
+    auta.forEach(function(obj,idx){
+        idx++;
+        $('#aautaa').append('<div class="col-md-3" ><img src="img/logo'+idx+'.jpg" alt="'+obj.name+'" class="img-fluid"></div>')
+    })
+    var modal = $('#myModal')
+    var foto = $('#kviz figure');
     foto.on('click', function(){
-        var index = Math.floor(Math.random()*prezidenti.length);
-        $(this).attr('src','img/'+prezidenti[index].photo)
-               .attr('alt',prezidenti[index].name);
-    });
-
-    /* Po kliknutí na tlačítko Ověřit se barevně ohraničí fotky */
+            var alt = $(this).find('figcaption').text();
+            modal.find('.modal-title').text(alt);
+            modal.modal('show');
+            modal.hide();
+            modal.toggle(500)
+            var tohleto=this;
+            $('#myModal img').on('click', function(){
+                $(tohleto).find('img').attr('src',$(this).attr('src'))
+                                      .attr('alt',$(this).attr('alt'));
+                modal.modal('hide');
+                tohleto=null;
+            })
+            $(tohleto).find('')
+        });
     $('#kviz .btn-success').on('click', function(){
         $('#kviz figure').each(function(idx,obj) {
             var alt = $(obj).find('img').attr('alt');
@@ -49,16 +53,4 @@ $(function(){
         $('#vuz figcaption').text(vozy[i].place);
         i<vozy.length-1 ? i++ : i=0; 
     }, 2000);
-
-    function zmenaTextu(i){
-        $('#perlicky article h4').text(perlicky[i].title);
-        $('#perlicky article p').text(perlicky[i].text);
-    }
-
-    var a = 0;
-    zmenaTextu(a);
-    $('#perlicky button').on('click',function(){
-        a < perlicky.length - 1 ? a++ : a = 0;
-        zmenaTextu(a);
-    })
 })

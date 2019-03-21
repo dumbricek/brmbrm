@@ -2,7 +2,7 @@
 <html lang="cs">
 
 <head>
-    <title>Ještě nevím</title>
+    <title>Automobilky</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,16 +16,14 @@
 <body>
     <header class="text-center text-uppercase p-5">
         <h1 class="display-2 text-white">Automobilky</h1>
-        <!--<hr>
-        <h4 class="text-warning">Muži, kteří stáli v čele naší republiky</h4>-->
     </header>
     <main>
         <div class="container">
             <div class="row pb-5 pt-5 content">
                 <div class="col-sm-12 col-md-8">
-                    <h2>Naši prezidenti</h2>
+                    <h2>Automobilky</h2>
                     <section id="ustava">
-                        <h3>Prezident v Ústavě České republiky</h3>
+                        <h3>Seznam automobilek</h3>
                         <div>
                             <h4>Škoda Auto</h4>
                             <p>ŠKODA AUTO a.s. je největší výrobce automobilů v České republice. Sídlo společnosti je v
@@ -126,7 +124,7 @@
                         </div>
                     </section>
                     <section id="kviz">
-                        <h3>Poznáte prezidenty?</h3>
+                        <h3>Poznáte loga?</h3>
                         <div class="row">
                         </div>
                         <p><button class="btn btn-success">Ověřit</button></p>
@@ -138,21 +136,10 @@
                         <h3>Vozy automobilek</h3>
                         <div>
                             <figure>
-                                <img src="img/prazsky-hrad.jpg" alt="Pražský hrad" class="img-fluid">
-                                <figcaption>Pražský hrad</figcaption>
+                                <img src="img/superb.jpg" alt="superb" class="img-fluid">
+                                <figcaption>Škoda Superb</figcaption>
                             </figure>
                         </div>
-                    </section>
-                    <section id="perlicky">
-                        <h3>Prezidentské perličky</h3>
-                        <article>
-                            <h4>Titulek</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit reprehenderit
-                                distinctio tenetur nobis saepe officia in voluptatibus architecto, quia dolore veniam
-                                natus quae,
-                                provident doloribus laborum consequuntur nisi deleniti nostrum.</p>
-                        </article>
-                        <button>Další</button>
                     </section>
                     <section id="odkazy">
                         <h3>Doporučené odkazy</h3>
@@ -166,7 +153,7 @@
         </div>
     </main>
     <footer class="p-5">
-        <div class="container">
+        <div class="container bg-secondary">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="text-secondary">
@@ -177,9 +164,9 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-8">
-                    <h5 class="text-primary text-uppercase border-bottom mb-4 pb-3">Kontakt na autora</h5>
-                    <div class="text-secondary">
-                        <p><b>Prezentace</b></p>
+                    <h5 class="text-uppercase border-bottom mb-4 pb-3">Kontakt na autora</h5>
+                    <div class="text">
+                        <p><b>Dumbricek</b></p>
                         <p>E-mail: David.Dumbrovsky@seznam.cz</p>
                         <p>Github: <a href="https://github.com/dumbricek"
                                 target="_blank">https://github.com/dumbricek</a></p>
@@ -187,6 +174,32 @@
                 </div>
             </div>
         </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary">
+                  <h4 class="modal-title text-white">Automobilky</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row" id="aautaa">
+                        </div>
+                    </div>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Zavřít</button>
+                </div>
+          
+              </div>
+            </div>
+          </div> 
     </footer>
 
     <!-- Optional JavaScript -->
