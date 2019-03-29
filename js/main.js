@@ -34,7 +34,6 @@ $(function(){
                                       .attr('alt',$(this).attr('alt'));
                 modal.modal('hide');
             })
-            //$(tohleto).find('')
         });
     $('#kviz .btn-success').on('click', function(){
         $('#kviz figure').each(function(idx,obj) {
