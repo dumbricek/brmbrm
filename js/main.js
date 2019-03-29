@@ -20,20 +20,21 @@ $(function(){
     })
     var modal = $('#myModal')
     var foto = $('#kviz figure');
+    var tohleto=null;
     foto.on('click', function(){
+            tohleto=null;
             var alt = $(this).find('figcaption').text();
             modal.find('.modal-title').text(alt);
             modal.modal('show');
             modal.hide();
             modal.toggle(500)
-            var tohleto=this;
+            tohleto=this;
             $('#myModal img').on('click', function(){
                 $(tohleto).find('img').attr('src',$(this).attr('src'))
                                       .attr('alt',$(this).attr('alt'));
                 modal.modal('hide');
-                tohleto=null;
             })
-            $(tohleto).find('')
+            //$(tohleto).find('')
         });
     $('#kviz .btn-success').on('click', function(){
         $('#kviz figure').each(function(idx,obj) {
